@@ -35,4 +35,5 @@ def batch_processing(batch_size):
     for row in user_dict:
         if row["age"] >= 25:
             print(row)
+    return None
         
