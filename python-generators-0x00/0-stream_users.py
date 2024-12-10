@@ -16,7 +16,7 @@ def stream_users():
             database = "ALX_prodev"
         )
         if connection.is_connected():
-            cursor = connection.cursor()
+            cursor = connection.cursor(dictionary=True)
             q = "SELECT * FROM user_data"
             cursor.execute(q)
             for row in cursor.fetchall():
