@@ -15,9 +15,7 @@ async def async_fetch_older_users(db_path, age):
 
 async def fetch_concurrently():
     db_path = 'users.db'
-    users_task = async_fetch_users(db_path)
-    older_users_task = async_fetch_older_users(db_path, 40)
-    users, older_users = await asyncio.gather(users_task, older_users_task)
+    users, older_users = await asyncio.gather(async_fetch_users(db_path), async_fetch_older_users(db_path, 40))
     
     print("All Users:")
     for user in users:
