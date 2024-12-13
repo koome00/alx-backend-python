@@ -22,10 +22,8 @@ class DatabaseConnection:
             try:
                 if exc_type is None:
                     self.connection.commit()
-                    print("Transaction committed successfully.")
                 else:
                     self.connection.rollback()
-                    print("Transaction rolled back due to an exception.")
             except sqlite3.Error as e:
                 print(f"An error occurred while handling the transaction: {e}")
             finally:
