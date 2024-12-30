@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 """
 create a generator that streams rows from an SQL database one by one.
 """
@@ -14,9 +14,9 @@ def connect_db():
     """
     try:
         connection = connect(
-            host = os.getenv("HOST"),
-            password = os.getenv("PASSWORD"),
-            user = os.getenv("USER")
+            host = "localhost",
+            password = "root",
+            user = "root"
         )
         print(connection)
         return connection
@@ -45,9 +45,9 @@ def connect_to_prodev():
     """
     try:
         connection = connect(
-            host = os.getenv("HOST"),
-            password = os.getenv("PASSWORD"),
-            user = os.getenv("USER"),
+            host = "localhost",
+            password = "root",
+            user = "root",
             database = "ALX_prodev"
         )
         print("Connected to prodev: ", connection)
@@ -102,3 +102,4 @@ def insert_data(connection, data):
                 connection.commit()
     except Exception as e:
         print("Insert Error: ", e)
+
